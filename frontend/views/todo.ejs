@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <%- include('head'), { heading } %>
+
+    <body>
+        <h1 class="title"><%= heading %></h1>
+
+        <form>
+            <label for="todo-input-id" class="todo-label">Add todo:</label>
+            <br />
+            <input
+                type="text"
+                placeholder="Enter todo"
+                id="todo-input-id"
+                class="todo-input"
+            />
+            <br />
+            <button class="todo-button" id="todo-button-id">Add</button>
+        </form>
+
+        <ul class="todo-list" id="todo-list-id"></ul>
+
+        <%- include('menu') %>
+
+        <script src="js/todo.js"></script>
+    </body>
+</html>
