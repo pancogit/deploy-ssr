@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const routes_1 = require("./routes/routes");
 const todoModel_1 = require("./model/todoModel");
+const configs_1 = require("./configs");
 // load .env file into process.env
 dotenv_1.default.config();
 // create express application server
@@ -19,13 +20,9 @@ app.set("views", "frontend/views");
 app.use(express_1.default.static("frontend"));
 // parse incoming http post requests bodies as json objects
 app.use(express_1.default.json());
-const port = Number(process.env.PORT) || 3000;
-const address = process.env.USE_REMOTE_ADDRESS === "true"
-    ? process.env.SERVER_REMOTE_ADDRESS || "0.0.0.0"
-    : process.env.SERVER_LOCAL_ADDRESS || "localhost";
 // listen to the server port and address
-app.listen(port, address, () => {
-    console.log(`Server is listening on ${address}:${port}`);
+app.listen(configs_1.serverPort, configs_1.serverAddress, () => {
+    console.log(`Server is listening on ${configs_1.serverAddress}:${configs_1.serverPort}`);
 });
 // set all routes
 app.use("/", routes_1.router);
