@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // get server configurations
-export const serverPort = Number(process.env.SERVER_PORT) || 3000;
+export const serverPort = Number(process.env.PORT) || 3000;
 
 export const serverAddress =
     process.env.USE_SERVER_REMOTE_ADDRESS === "true"
