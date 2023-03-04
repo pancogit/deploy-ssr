@@ -72,6 +72,10 @@ There is another command for running local app in production mode with hosted mo
 npm run start-production-unix
 ```
 
+To run app on windows system use windows npm scripts alternatives in [available scripts](#available-scripts).
+
+Open http://localhost:4000/ in browser to use app (see [.env.development](#env-configuration-files) for details).
+
 ### Online (deployed) app running
 
 For deployement of app, [Render](https://render.com/) will be used as an example. Login with Github account and dashboard will be opened. Create new web service by _New_ -> _Web service_ and connect to repository which is needed for deployment. Under _Name_ put some name of web service. Under _Region_ choose server which is closest to locations of app users because it will be place where deployed app will be running. Under _Branch_ choose Github branch for app. Under _Build Command_ set _npm install_ for installing all libraries and dependencies when any change is made on Github repository. Under _Start Command_ set command for starting web server for the app. It will be _npm run start-production-windows_ npm script for Windows machine (look for [4. start-production-windows](#available-scripts)). Finally click on _Create Web Service_ to finish.
@@ -81,3 +85,5 @@ When any changes happens on Github repository with new commits, deployment of ap
 Now go to _Dashboard_ and click on created web service. Go to _Environment_ and under _Environment Variables_ set all environment variables from [.env.production](#env-configuration-files) file. Those variables will be used as placeholders for all environment variables in the application (_process.env.VARIABLE_NAME_ for nodejs).
 
 If app is not deployed properly, then go to _Logs_ and console prints will be available for debugging. Otherwise, if app is deployed successfully, then under web service name, click on the link that looks like [https://deploy-service-<CUSTOM_ID>.onrender.com](https://deploy-service-<CUSTOM_ID>.onrender.com) and deployed app will be opened in new browser tab.
+
+<img src="./documentation/images/example.jpg" alt="Example pictures" width="500"/>
